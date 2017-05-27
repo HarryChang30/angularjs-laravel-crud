@@ -129,11 +129,17 @@ app.controller('SupplierController' , function($scope , $http , API_URL){
                 url: API_URL + 'supplier/' + id
             }).success(function(response){
 
-
+                  $('#successModal').modal('show');
+                  setTimeout(function(){
+                     $('#successModal').modal('hide');
+                  } , 1000);
 
             }).error(function(reponse){
 
-
+                  $('#errorModal').modal('show');
+                  setTimeout(function(){
+                     $('#errorModal').modal('hide');
+                  } , 1000);
 
             });
 
